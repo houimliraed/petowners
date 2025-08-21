@@ -9,12 +9,14 @@ load_dotenv()
 
 Base = declarative_base()
 
-
+'''
 if os.getenv("DEPLOYMENT_ENVIRONMENT") == 'DEV':
     engine = create_engine(os.getenv("DB_URL"), connect_args={'check_same_thread': False})
 else:
     engine = create_engine(os.getenv("DB_URL"))
+'''
 
+engine = create_engine("postgresql://rootuser:Testing123955@fastapi-aws-database.c9s0oiwomqh4.eu-west-3.rds.amazonaws.com:5432/postgres")
 
 
 
